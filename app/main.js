@@ -1,18 +1,25 @@
 import "./style.css";
 
-async function getheros() {
+async function getgenshin() {
   try {
-    const response = await fetch();
-    if (response.status != 200) {
-      throw new Error(response);
-    } else {
-      const data = await response.json();
-      console(data.data);
-      data.data.forEach((agent) => console.log(agent.displayName));
-    }
+    const response = await fetch("https://genshin.jmp.blue/characters");
+    console.log(response.status);
+    //if (response.status != 200) {
+
+    //  throw new Error(response);
+
+    //} else {
+
+    //  const data = await response.json();
+
+    //  console.log(data.data);
+
+    //  data.data.forEach((chararcter) => console.log(chararcter.name));
+
+    //}
   } catch (error) {
-    alert("woah buddy");
+    alert("Hey this character doesn't exist");
   }
 }
 
-getdata();
+getgenshin();
