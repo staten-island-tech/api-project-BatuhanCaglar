@@ -4,7 +4,7 @@ async function getgenshin() {
   try {
     const response = await fetch("https://genshin.jmp.blue/characters");
     console.log(response.status);
-    //if (response.status != 200) {
+    if (response.status != 200) {
 
     //  throw new Error(response);
 
