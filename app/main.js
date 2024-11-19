@@ -2,23 +2,19 @@ import "./style.css";
 
 async function getgenshin() {
   try {
-    const response = await fetch("https://genshin.jmp.blue/characters");
+    const response = await fetch("");
     console.log(response.status);
     if (response.status != 200) {
+      throw new Error(response);
+    } else {
+      const data = await response.json();
 
-    //  throw new Error(response);
+      console.log(data.data);
 
-    //} else {
-
-    //  const data = await response.json();
-
-    //  console.log(data.data);
-
-    //  data.data.forEach((chararcter) => console.log(chararcter.name));
-
-    //}
+      data.data.forEach(() => console.log(.name));
+    }
   } catch (error) {
-    alert("Hey this character doesn't exist");
+    alert("Hey this city doesn't exist");
   }
 }
 
