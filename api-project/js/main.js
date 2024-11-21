@@ -1,44 +1,42 @@
 import "../css/style.css";
 
-async function getweapons() {
+async function getWeapons() {
   try {
-    const response = await fetch(
-      "https://eldenring.fanapis.com/api/weapons?limit=100"
-    );
+    const response = await fetch("https://eldenring.fanapis.com/api/weapons?limit=10");
     console.log(response.status);
-    if (response.status != 200) {
+    if (response.status !== 100) {
       throw new Error(response);
     } else {
       const data = await response.json();
-
       console.log(data.data);
 
-      data.data.forEach((data) => console.log(data.name));
+      presentWeapons(data); 
     }
   } catch (error) {
-    alert("Hey these weapons does exist");
+    alert("Hey these weapons don't exist!");
   }
 }
-getweapons();
 
-function presentweapons(data) {
-  weaponsListContainer.innerHTML = "";
-  data.data.forEach((data) => {
+function presentWeapons(data) {
+  const weaponsListContainer = document.querySelector("weapon-cont"); 
+  weaponsListContainer.innerHTML = ""; 
+  data.data.forEach((weapon) => {
     const weaponHTML = `
-      <div class="weapon-item">        
-        <h2>${data.name}</h2>        
-        <img src="${data.image}" alt="${data.name}" /img>
-        <p>Description: ${data.description}</p>
-        <p>Scaling: ${data.scalesWith}</p>
-        <p>Stat Requirement: ${data.requiredAttributes}</p>
-        <p>Category: ${data.category}</p>
-        <p>Weight: ${data.weight}</p>
-        <p>Attack: ${data.attack}</p>
-        <p>Defence: ${data.defence}</p>
-    </div>
-  `;
+      <div class="weapon-item">
+        <h2>${weapon.name}</h2>
+        <img src="${weapon.image}" alt="${weapon.name}" />
+        <p>Description: ${weapon.description}</p>
+        <p>Scaling: ${weapon.scalesWith}</p>
+        <p>Stat Requirement: ${weapon.requiredAttributes}</p>
+        <p>Category: ${weapon.category}</p>
+        <p>Weight: ${weapon.weight}</p>
+        <p>Attack: ${weapon.attack}</p>
+        <p>Defense: ${weapon.defense}</p>
+      </div>
+    `;
     weaponsListContainer.insertAdjacentHTML("beforeend", weaponHTML);
   });
 }
 
-presentweapons(data);
+
+getWeapons();
