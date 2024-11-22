@@ -1,7 +1,221 @@
 
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,body,*{
+    margin: padding 0;
+    box-sizing: border-box;
+    font-size:10px;
+}
+
+:root{
+    --primary-cool: #ffffff;
+    --tertiary-cool: #292323;
+    --secondary-cool: #829bb3;
+    --fontcolor-cool: black;
+    --h1color-cool: black;
+    --button-cool:white;
+
+
+    --primary-warm: #56202f;
+    --tertiary-warm: #faf9dd;
+    --secondary-warm: #cb4f3a;
+    --fontcolor-warm: black;
+    --h1color-warm: white;
+    --button-warm: black;
+
+    --h1: 7.594rem;
+    --h2: 5.063rem;
+    --h3: 3.375rem;
+    --h4: 2.25rem;
+    --h5: 1.5rem;
+}
+
+.warm{
+    --primary: var(--primary-warm);
+    --secondary: var(--tertiary-warm);
+    --tertiary: var(--secondary-warm);
+    --fontcolor: var(--fontcolor-warm);
+    --h1color: var(--h1color-warm);
+    --buttoncolor: var(--button-warm);
+}
+
+.cool{
+    --primary: var(--primary-cool);
+    --tertiary: var(--tertiary-cool);
+    --secondary: var(--secondary-cool);
+    --fontcolor: var(--fontcolor-cool);
+    --h1color: var(--h1color-color);
+    --buttoncolor: var(--button-cool);
+}
+
+
+h1{
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+
+    font-size: var(--h1);
+    color: var(--h1color);
+    text-align: center;
+}
+
+p{
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: var(--h4);
+    gap: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 2.5rem;
+}
+
+h2{
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-size: var(--h2);
+    color: black;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+body{
+    background-color: var(--primary);
+}
+
+#app{
+    background-color: var(--primary);
+    border: var(--secondary);
+    border-radius: 2rem;
+    border-width: 1.5rem;
+
+    width: 85vw;
+    height: auto;
+
+    margin-top: 15rem;
+    margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: space-between; 
+}
+
+#weapon-cont{
+    background-color: var(--tertiary);
+    border: var(--secondary);
+    border-radius: 2rem;
+    border-width: 1.5rem;
+
+    width: 85vw;
+    height: auto;
+
+    margin-top: 5rem;
+    margin: auto;
+
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: space-between; 
+    gap: 2rem;
+}
+
+.weapon-item{
+    flex: 28%; 
+    max-width: 28%; 
+    min-width: 15rem;
+    height: 125rem;
+    box-sizing: border-box; 
+    gap: 2rem;
+
+    border: var(--primary);
+    background-color: var(--secondary);    
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px black;
+
+    margin: auto; 
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: 70%; 
+    height: auto;
+    border-radius: 0.5rem;
+    margin-top: 15rem;
+    margin: auto;   
+}
+
+#weapons-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+button{
+  
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 4.5rem;
+    color: var(--buttoncolor);
+
+    background-color: var(--tertiary); 
+    border-radius: 0.5rem;
+   
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+
+button:hover{
+    transition-duration: 0.2s;
+    transform: scale(1.2);
+    background-color: var(--secondary);
+    border: var(--secondary);
+}
+  
+button:active{
+    transition-duration: 0.2s;
+    background-color: goldenrod;
+
+    transform: scale(1.2);
+}
+
+.weapon-item:hover {
+    animation: transform 2.25s ease-in-out;
+    background-color: white;
+}
+
+h1:hover{
+    animation: ease-in-out;
+    transition-duration: 0.2s;
+    transform: scale(1.2);
+}
+  
+
+@keyframes transform {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.15); 
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
