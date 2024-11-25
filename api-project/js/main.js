@@ -18,35 +18,45 @@ function presentWeapons(data) {
 
   data.data.forEach((weapon) => {
     const scalingText = weapon.scalesWith
-      .map((scale) => `<li>${scale.name}: ${scale.scaling}</li>`)
+      .map((scale) => `<p>${scale.name}: ${scale.scaling}</p>`)
       .join("");
 
     const attackText = weapon.attack
-      .map((attack) => `<li>${attack.name}: ${attack.amount}</li>`)
+      .map((attack) => `<p>${attack.name}: ${attack.amount}</p>`)
       .join("");
 
     const defenceText = weapon.defence
-      .map((defence) => `<li>${defence.name}: ${defence.amount}</li>`)
+      .map((defence) => `<p>${defence.name}: ${defence.amount}</p>`)
       .join("");
 
     const weaponHTML = `
       <div class="weapon-item">
         <h2>${weapon.name}</h2>
         <img src="${weapon.image}" alt="${weapon.name}" />
-        <p>Description: ${weapon.description}</p>
-              
-        <p><strong>Scaling:</strong></p>
-        <ul>${scalingText}</ul>
-              
-        <p><strong>Attack:</strong></p>
-        <ul>${attackText}</ul>
-              
-        <p><strong>Defense:</strong></p>
-        <ul>${defenceText}</ul>
-              
-        <p><strong>Category:</strong> ${weapon.category}</p>
-        <p><strong>Weight:</strong> ${weapon.weight}</p>
-      </div>
+
+        <div class="container">
+          <p>Description: ${weapon.description}</p>    
+        </div>
+
+        <div class="container">
+          <div class="weapon-cl">
+            <p class="con" ><strong>Scaling:</strong></p>
+            <p class="con" > ${scalingText}</p>
+          </div>
+          <div class="weapon-cl">
+            <p class="con" ><strong>Attack:</strong></p>
+            <p class="con" > ${attackText}</p>
+          </div>    
+          <div class="weapon-cl"> 
+            <p class="con" ><strong>Defense:</strong></p>
+            <p class="con" > ${defenceText}</p>
+          </div>       
+        </div> 
+
+        <div class="container">
+          <p><strong>Category:</strong> - ${weapon.category}</p>
+          <p><strong>Weight:</strong> - ${weapon.weight}</p>
+        </div>
       `;
 
     weaponsListContainer.insertAdjacentHTML("beforeend", weaponHTML);
