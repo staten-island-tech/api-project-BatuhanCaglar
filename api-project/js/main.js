@@ -34,9 +34,9 @@ function presentWeapons(data) {
         <h2>${weapon.name}</h2>
         <img src="${weapon.image}" alt="${weapon.name}" />
 
-        <div class="container">
-          <p>Description: ${weapon.description}</p>    
-        </div>
+
+        <p>Description: ${weapon.description}</p>    
+
 
         <div class="container">
           <div class="weapon-cl">
