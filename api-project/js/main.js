@@ -57,6 +57,7 @@ function presentWeapons(data) {
           <p><strong>Category:</strong> - ${weapon.category}</p>
           <p><strong>Weight:</strong> - ${weapon.weight}</p>
         </div>
+
       `;
 
     weaponsListContainer.insertAdjacentHTML("beforeend", weaponHTML);

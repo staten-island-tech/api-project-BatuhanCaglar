@@ -132,8 +132,6 @@ body{
 
     margin: auto; 
     padding: 1.5rem;
-    padding-left: 0rem;
-    padding-right: 0rem;
 
     display: flex;
     flex-direction: column;
@@ -141,13 +139,15 @@ body{
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
     gap: 1rem; 
-    width: 100%;
+    width: 95%;
     align-items: center;
     height: auto;
     padding: 1.5rem;
+
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: space-between; 
 }
 
 .weapon-cl{    
@@ -156,9 +156,9 @@ body{
     border-radius: 1rem;
     box-shadow: 0 4px 8px black;
 
-    flex: 28%; 
-    max-width: 28%; 
-    min-width: 15rem;
+    flex: 22%; 
+    max-width: 22%;
+    min-width: 20rem; 
     height: 35rem;
     box-sizing: border-box; 
 
