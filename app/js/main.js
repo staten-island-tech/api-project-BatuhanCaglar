@@ -1,4 +1,4 @@
-import "../css/style.css";
+import "../CSS/style.css";
 
 async function getWeapons() {
   const response = await fetch(
@@ -34,34 +34,35 @@ function presentWeapons(data) {
         <h2>${weapon.name}</h2>
         <img src="${weapon.image}" alt="${weapon.name}" />
 
-
-        <p>Description: ${weapon.description}</p>    
-
+      <div class="containerd">
+        <p class="conh" >Description:</p>
+        <p class="description"> ${weapon.description}</p>    
+      </div> 
 
         <div class="container">
           <div class="weapon-cl">
-            <p class="con" ><strong>Scaling:</strong></p>
+            <p class="conh" >Scaling:</p>
             <p class="con" > ${scalingText}</p>
           </div>
           <div class="weapon-cl">
-            <p class="con" ><strong>Attack:</strong></p>
+            <p class="conh">Attack:</p>
             <p class="con" > ${attackText}</p>
           </div>    
           <div class="weapon-cl"> 
-            <p class="con" ><strong>Defense:</strong></p>
+            <p class="conh">Defense:</p>
             <p class="con" > ${defenceText}</p>
           </div>       
         </div> 
 
-        <div class="container">
-          <p><strong>Category:</strong> - ${weapon.category}</p>
-          <p><strong>Weight:</strong> - ${weapon.weight}</p>
+        <div class="containerc">
+          <p>Category: - ${weapon.category}</p>
+          <p>Weight: - ${weapon.weight}</p>
         </div>
 
       `;
 
     weaponsListContainer.insertAdjacentHTML("beforeend", weaponHTML);
-  });
+});
 }
 
 getWeapons();
