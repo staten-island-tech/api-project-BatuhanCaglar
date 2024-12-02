@@ -1,9 +1,4 @@
-import "../CSS/style.css";
-
-export const DOMSelectors = {
-  weaponBtn: document.getElementById("weapons-btn"),
-  talismanBtn: document.getElementById("talismans-btn"),
-};
+import "../css/style.css";
 
 document.addEventListener("DOMContentLoaded", function () {
   const DOMSelectors = {
