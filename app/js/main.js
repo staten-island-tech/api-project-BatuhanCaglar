@@ -3,39 +3,38 @@ import "../css/style.css";
 document.addEventListener("DOMContentLoaded", function () {
   const DOMSelectors = {
     themeBtn: document.querySelector("#themebtn"),
-};
+  };
 
+  async function getWeapons() {
+    const response = await fetch(
+      "https://eldenring.fanapis.com/api/weapons?limit=100"
+    );
+    console.log(response.status);
 
-async function getWeapons() {
-  const response = await fetch(
-    "https://eldenring.fanapis.com/api/weapons?limit=100"
-  );
-  console.log(response.status);
+    let data = await response.json();
+    console.log(data.data);
 
-  let data = await response.json();
-  console.log(data.data);
+    presentWeapons(data);
+  }
 
-  presentWeapons(data);
-}
+  function presentWeapons(data) {
+    const weaponsListContainer = document.querySelector("#weapon-cont");
+    weaponsListContainer.innerHTML = "";
 
-function presentWeapons(data) {
-  const weaponsListContainer = document.querySelector("#weapon-cont");
-  weaponsListContainer.innerHTML = "";
+    data.data.forEach((weapon) => {
+      const scalingText = weapon.scalesWith
+        .map((scale) => `<p>${scale.name}: ${scale.scaling}</p>`)
+        .join("");
 
-  data.data.forEach((weapon) => {
-    const scalingText = weapon.scalesWith
-      .map((scale) => `<p>${scale.name}: ${scale.scaling}</p>`)
-      .join("");
+      const attackText = weapon.attack
+        .map((attack) => `<p>${attack.name}: ${attack.amount}</p>`)
+        .join("");
 
-    const attackText = weapon.attack
-      .map((attack) => `<p>${attack.name}: ${attack.amount}</p>`)
-      .join("");
+      const defenceText = weapon.defence
+        .map((defence) => `<p>${defence.name}: ${defence.amount}</p>`)
+        .join("");
 
-    const defenceText = weapon.defence
-      .map((defence) => `<p>${defence.name}: ${defence.amount}</p>`)
-      .join("");
-
-    const weaponHTML = `
+      const weaponHTML = `
       <div class="weapon-item">
         <h2>${weapon.name}</h2>
         <img src="${weapon.image}" alt="${weapon.name}" />
@@ -69,33 +68,31 @@ function presentWeapons(data) {
         </div>
 
       `;
-  
-    weaponsListContainer.insertAdjacentHTML("beforeend", weaponHTML);
-});
-}
 
-getWeapons();
+      weaponsListContainer.insertAdjacentHTML("beforeend", weaponHTML);
+    });
+  }
 
+  getWeapons();
 
-async function getTalismans() {
-  const response = await fetch(
-    "https://eldenring.fanapis.com/api/talismans?limit=100"
-  );
-  console.log(response.status);
+  async function getTalismans() {
+    const response = await fetch(
+      "https://eldenring.fanapis.com/api/talismans?limit=100"
+    );
+    console.log(response.status);
 
-  let data = await response.json();
-  console.log(data.data);
+    let data = await response.json();
+    console.log(data.data);
 
-  presentTalismans(data);
-}
+    presentTalismans(data);
+  }
 
+  function presentTalismans(data) {
+    const talismansListContainer = document.querySelector("#talismans-cont");
+    talismansListContainer.innerHTML = "";
 
-function presentTalismans(data) {
-  const talismansListContainer = document.querySelector("#talismans-cont");
-  talismansListContainer.innerHTML = "";
-
-  data.data.forEach((talisman) => {
-    const talismanHTML = `
+    data.data.forEach((talisman) => {
+      const talismanHTML = `
       <div class="talisman-item">
         <h2>${talisman.name}</h2>
         <img src="${talisman.image}" alt="${talisman.name}" />
@@ -107,20 +104,18 @@ function presentTalismans(data) {
       </div> 
       `;
       talismansListContainer.insertAdjacentHTML("beforeend", talismanHTML);
-});
-}
+    });
+  }
 
-getTalismans();
+  getTalismans();
 
-DOMSelectors.themeBtn.addEventListener("click", function () {
-      if (document.body.classList.contains("cool")) {
-        document.body.classList.remove("cool");
-        document.body.classList.add("warm");
-      } else {
-        document.body.classList.add("cool");
-        document.body.classList.remove("warm");
-
-
-}});
-
+  DOMSelectors.themeBtn.addEventListener("click", function () {
+    if (document.body.classList.contains("cool")) {
+      document.body.classList.remove("cool");
+      document.body.classList.add("warm");
+    } else {
+      document.body.classList.add("cool");
+      document.body.classList.remove("warm");
+    }
+  });
 });
