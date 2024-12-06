@@ -50,13 +50,16 @@ html,body,*{
     --buttoncolor: var(--button-cool);
 }
 
+body{
+    background-color: var(--tertiary);
+}
 
 h1{
     font-family: "Handjet", sans-serif;
     font-optical-sizing: auto;
 
     font-size: var(--h1);
-    color: var(--h1color);
+    color: var(--secondary);
     text-align: center;
 }
 
@@ -77,9 +80,17 @@ p{
     text-align: center;
     row-gap: 0.5rem;
     color: black;
-
 }
 
+.cat{
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: var(--h4);
+    text-align: center;
+    row-gap: 0.5rem;
+    color: white;
+}
 
 #weapons-list,
 #talismans-list,
@@ -92,6 +103,7 @@ p{
     width: 85vw;
     height: auto;
     row-gap: 7rem;
+    padding-top: 5rem;
 
     margin-top: 2rem;
     margin: auto;
@@ -102,7 +114,6 @@ p{
 }
 
 .weapon-item{    
-    border: var(--primary);
     background-color: var(--secondary);    
     border-radius: 1rem;
     box-shadow: 0 4px 8px black;
@@ -110,7 +121,7 @@ p{
     flex: 28%; 
     max-width: 28%; 
     min-width: 15rem;
-    min-height: 165rem;
+    min-height: 110rem;
     height: auto;
     box-sizing: border-box; 
 
@@ -126,7 +137,6 @@ p{
 
 
 .talisman-item{    
-    border: var(--primary);
     background-color: var(--secondary);    
     border-radius: 1rem;
     box-shadow: 0 4px 8px black;
@@ -148,10 +158,8 @@ p{
     gap: 3rem;
 }
 
-
-
 .weapon-cl{    
-    background-color: var(--secondary);    
+    background-color: var(--primary);    
     border-radius: 1rem;
     box-shadow: 0 4px 8px black;
 
@@ -170,7 +178,7 @@ p{
 }
 
 .talisman-cl{    
-    background-color: var(--secondary);    
+    background-color: var(--primary);    
     border-radius: 1rem;
     box-shadow: 0 4px 8px black;
 
@@ -182,11 +190,20 @@ p{
     margin: auto; 
     padding-left: 0rem;
     padding-right: 0rem;
-
+    padding: 2rem;
     display: flex;
     flex-direction: column;
 }
 
+.container{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 1rem; 
+    background-color: var(--tertiary);
+    padding: 1rem;
+    border-radius: 1rem;
+}
 
 button:hover{
     transition-duration: 0.2s;

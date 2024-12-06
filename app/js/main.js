@@ -36,7 +36,7 @@ function presentWeapons(data) {
       .map((defence) => `<p>${defence.name}: ${defence.amount}</p>`)
       .join("");
 
-  const weaponHTML = `
+    const weaponHTML = `
     <div class="weapon-item">
       <h2>${weapon.name}</h2>
       <img src="${weapon.image}" alt="${weapon.name}" />
@@ -44,23 +44,24 @@ function presentWeapons(data) {
 
       <div class="container">
         <div class="weapon-cl">
-          <p><>Scaling:</p>
+          <p>Scaling:</p>
           <p>${scalingText}</p>
         </div>
         <div class="weapon-cl">
-          <p><>Attack:</p>
+          <p>Attack:</p>
           <p>${attackText}</p>
         </div>    
         <div class="weapon-cl"> 
           <p>Defense:</p>
           <p>${defenceText}</p>
-          </div>       
-        </div> 
+        </div>       
+      </div> 
 
         <div class="container">
-          <p><>Category: - ${weapon.category}</p>
-          <p><>Weight: - ${weapon.weight}</p>
+          <p class="cat">Category - ${weapon.category}</p>
+          <p class="cat">Weight - ${weapon.weight}</p>
         </div>
+
       </div>`;
     weaponsListContainer.insertAdjacentHTML("beforeend", weaponHTML);
   });
@@ -77,7 +78,9 @@ function presentTalismans(data) {
         <img src="${talisman.image}" alt="${talisman.name}" />
         <div class="talisman-cl">
           <p>Description: ${talisman.description}</p>
-          <p><strong>Effect:</strong> ${talisman.effect}</p>
+        </div>
+        <div class="talisman-cl">
+          <p>Effect: ${talisman.effect}</p>
         </div>
       </div>`;
     talismansListContainer.insertAdjacentHTML("beforeend", talismanHTML);
