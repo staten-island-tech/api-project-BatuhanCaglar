@@ -80,10 +80,9 @@ p{
 
 }
 
-body{
-    background-color: var(--primary);
-}
 
+#weapons-list,
+#talismans-list,
 #app{
     background-color: var(--primary);
     border: var(--secondary);
@@ -96,28 +95,6 @@ body{
 
     margin-top: 2rem;
     margin: auto;
-
-    display: flex;
-    flex-wrap: wrap;  
-    justify-content: space-between; 
-}
-
-
-#weapon-cont{
-    background-color: var(--tertiary);
-    border: var(--secondary);
-    border-radius: 2rem;
-    border-width: 1.5rem;
-
-    width: 85vw;
-    height: auto;
-
-    margin-top: 2rem;
-    margin: auto;
-    row-gap: 7rem;
-
-    padding-top: 4rem;
-    padding-bottom: 4rem;
 
     display: flex;
     flex-wrap: wrap;  
@@ -147,26 +124,6 @@ body{
     gap: 3rem;
 }
 
-#talismans-cont{
-    background-color: var(--tertiary);
-    border: var(--secondary);
-    border-radius: 2rem;
-    border-width: 1.5rem;
-
-    width: 85vw;
-    height: auto;
-
-    margin-top: 2rem;
-    margin: auto;
-    row-gap: 7rem;
-
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-
-    display: flex;
-    flex-wrap: wrap;  
-    justify-content: space-between; 
-}
 
 .talisman-item{    
     border: var(--primary);
@@ -191,102 +148,7 @@ body{
     gap: 3rem;
 }
 
-.contdescription {
-    background-color: var(--primary);
-    border: var(--tertiary);
-    border-radius: 2rem;
-    border-width: 1.5rem;
 
-    width: 100%;
-    min-height: 55rem;
-    height: auto;
-
-    margin-top: 5rem;
-    margin: auto;
-
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-
-    display: flex;
-    flex-wrap: wrap;  
-    justify-content: space-evenly; 
-    gap: 3rem;
-}
-
-.talismandesc {
-    background-color: var(--primary);
-    border: var(--tertiary);
-    border-radius: 2rem;
-    border-width: 1.5rem;
-
-    width: 100%;
-    min-height: 55rem;
-    height: auto;
-
-    margin-top: 5rem;
-    margin: auto;
-
-    padding: 3rem;
-
-    display: flex;
-    flex-wrap: wrap;  
-    justify-content: space-evenly; 
-    gap: 3rem;
-}
-
-
-.titledesc{
-    font-family: "Handjet", sans-serif;
-    font-optical-sizing: auto;
-
-    font-size: var(--h3);
-    color: black;
-    text-align: center;
-}
-
-.statcontainer {
-    background-color: var(--primary);
-    border: var(--tertiary);
-    border-radius: 2rem;
-    border-width: 1.5rem;
-
-    width: 100%;
-    min-height: 45rem;
-    height: auto;
-
-    margin-top: 5rem;
-    margin: auto;
-
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-
-    display: flex;
-    flex-wrap: wrap;  
-    justify-content: space-evenly; 
-    gap: 3rem;
-}
-
-.containerextra {
-    background-color: var(--primary);
-    border: var(--tertiary);
-    border-radius: 2rem;
-    border-width: 1.5rem;
-
-    width: 100%;
-    min-height: 15rem;
-    height: auto;
-
-    margin-top: 5rem;
-    margin: auto;
-
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-
-    display: flex;
-    flex-wrap: wrap;  
-    justify-content: space-evenly; 
-    gap: 3rem;
-}
 
 .weapon-cl{    
     background-color: var(--secondary);    
@@ -325,23 +187,6 @@ body{
     flex-direction: column;
 }
 
-button{
-  
-    font-family: "Handjet", sans-serif;
-    font-optical-sizing: auto;
-    font-size: 4.5rem;
-    color: var(--buttoncolor);
-
-    background-color: var(--tertiary); 
-    border-radius: 0.5rem;
-    border: var(--secondary);
-
-    text-align: center;
-    display: block;
-    margin: auto;
-    margin-top: 1%;
-    margin-bottom: 5%;
-}
 
 button:hover{
     transition-duration: 0.2s;
@@ -373,3 +218,26 @@ h2:hover{
     transition-duration: 0.2s;
     transform: scale(1.2);
 }
+
+#controls {
+    text-align: center;
+    margin: 1rem 0;
+}
+  
+button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: var(--fontcolor);
+    font-size: 1.5rem;
+}
+  
+
+
+  
+
+
+  
