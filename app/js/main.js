@@ -33,7 +33,7 @@ function presentWeapons(data) {
       .join("");
 
     const weaponHTML = `
-      <div class="bg-[#292323] rounded-xl shadow-lg p-4 flex flex-col items-center text-center w-[90%] max-w-sm">
+      <div class="bg-[#292323] rounded-xl shadow-lg p-4 flex flex-col items-center text-center w-[95%] max-w-lg">
         <h2 class="text-xl font-handjet text-[#829bb3]">${weapon.name}</h2>
         <img src="${weapon.image}" alt="${weapon.name}" class="w-full h-auto rounded-md mt-4" />
         <p class="text-white mt-4">${weapon.description}</p>
@@ -66,7 +66,7 @@ function presentTalismans(data) {
 
   data.forEach((talisman) => {
     const talismanHTML = `
-      <div class="bg-[#292323] rounded-xl shadow-lg p-4 flex flex-col items-center text-center w-[90%] max-w-sm">
+      <div class="bg-[#292323] rounded-xl shadow-lg p-4 flex flex-col items-center text-center w-[95%] max-w-lg">
         <h2 class="text-lg font-handjet text-[#829bb3]">${talisman.name}</h2>
         <img src="${talisman.image}" alt="${talisman.name}" class="w-full h-auto rounded-md mt-4" />
         <p class="text-white mt-4">${talisman.description}</p>
