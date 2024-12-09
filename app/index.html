@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,21 +13,23 @@
     <title>Items Emporium</title>
   </head>
 
-  <body class="cool">
-    <h1>Items Emporium</h1>
-    <div id="controls">
-      <button id="show-weapons">Show Weapons</button>
-      <button id="show-talismans">Show Talismans</button>
-      <button id="show-all">Show All</button>
-    </div>
-    <div id="app">      
-      <div id="items-container">
-        <div id="weapons-list"></div>
-        <div id="talismans-list"></div>
+  <body class="bg-[#292323] text-[#829bb3] min-h-screen flex flex-col items-center">
+    <header class="text-center py-12">
+      <h1 class="text-7xl font-handjet text-[#829bb3]">Items Emporium</h1>
+    </header>
+
+    <section id="controls" class="text-center my-4">
+      <button id="show-weapons" class="bg-[#829bb3] text-white px-8 py-4 rounded-lg mx-2 hover:scale-110 transition duration-300">Show Weapons</button>
+      <button id="show-talismans" class="bg-[#829bb3] text-white px-8 py-4 rounded-lg mx-2 hover:scale-110 transition duration-300">Show Talismans</button>
+      <button id="show-all" class="bg-[#829bb3] text-white px-8 py-4 rounded-lg mx-2 hover:scale-110 transition duration-300">Show All</button>
+    </section>
+
+    <main id="app" class="w-full flex flex-col items-center">
+      <div id="items-container" class="flex flex-col gap-12 w-10/12 max-w-screen-xl items-center">
+        <div id="weapons-list" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full"></div>
+        <div id="talismans-list" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full"></div>
       </div>
-    </div>
-    <script type="module" src="./js/main.js"></script>
-  </body>
+    </main>
 
     <script type="module" src="./js/main.js"></script>
   </body>
